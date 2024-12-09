@@ -23,7 +23,9 @@ export default function Foods() {
      }
     
     </div>
-     <button>More</button>
+     <button style = {{width:"150px", backgroundColor:"green", padding:"10px", border:"none", 
+      borderRadius:"15px", marginTop:"-15px", marginBottom:"10px",
+      color:"white", cursor:"pointer"}}>More</button>
     </>
   )
 }
