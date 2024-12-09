@@ -1,0 +1,120 @@
+
+.banner {
+      background-image:linear-gradient(
+            rgba(24, 24, 24, 0.8), 
+            rgba(0, 0, 0, 0.4)
+          ), url('../assets/main.jpg');
+
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      width: 100%;
+      display:"flex";
+      justify-Content:"center";
+      & h1{
+            font-size: 8rem;
+            color: rgb(243, 243, 243);
+            text-align: center;
+            padding-top: 5rem;
+
+      }
+      & P{
+            font-size: 3rem;
+            color: rgb(230, 224, 224);
+            text-align: center;
+            padding-top: 5rem;
+            margin-left: 45rem;
+            width: 950px;
+
+      }
+     
+    }
+    .secondContainer{
+      width: 100%;
+      height: 550px;
+      background-color:rgb(8, 24, 17);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-top: 2rem;
+      position: relative;
+      & .infos{
+            width: 60%;
+            position: absolute;
+            text-align: center;
+            padding-top: 5rem;
+            left: 0;
+            top: 0;
+            height: 80%;
+            background-color: aliceblue;
+            font-size: 3rem;
+            border-radius: 0px 220px 220px 0px;
+            & h2{
+                  font-size: 8rem;
+                  text-transform: uppercase;
+                  width: 950px;
+                  font-weight: bold;
+                  margin-left: 5rem;
+                  color: rgb(16, 51, 46);
+            }
+            & p:first-child{
+                  margin-left: -10rem;
+                  margin-bottom: 2rem;
+                  font-weight: bold;
+                  font-size: 3.5rem;
+      
+            }
+            & p:last-child{
+                  color: rgb(179, 176, 176);
+                  margin-left: -10rem;
+                  margin-top: 5rem;
+            }
+      }
+      & .img{ 
+            position: absolute;
+            right: 22rem;
+            top: 0;
+            & img{
+                  width: 650px;
+                  height: 450px;
+                  border-radius: 20%;
+                  box-shadow: 3px 3px 3px 3px rgb(155, 32, 32);
+                  margin-top: 1.5rem;
+
+            }}
+      & .buttons{
+            position: absolute;
+            bottom:2.5rem;
+            width: 50%;
+            left: 5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+          & button{
+            width: 18rem;
+            padding: 1.5rem;
+            background-color: rgb(207, 127, 7);
+            border: none;
+            border-radius: 1.1rem;
+            color: white;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            box-shadow: .1rem .1rem .1rem .1rem rgb(92, 90, 9);
+          }
+          & p{
+            font-size: 2rem;
+            width: 25rem;
+            line-height: 3rem;
+            & span {
+                  width: 5rem;
+                  height: 5rem;
+                  color: rgb(207, 127, 7);
+                  margin: .5rem;
+                  padding: .2rem;
+                  border-radius: 50%;
+            }
+          }
+
+      }
+}

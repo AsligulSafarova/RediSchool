@@ -1,0 +1,33 @@
+{
+      "recipes":[
+      {
+            "id":"1",
+            "title":"Vegetables",
+            "image":"https://plus.unsplash.com/premium_photo-1664551735237-a0ebe277bcdd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fFZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+            "id":"2",
+            "title":"Fruits",
+            "image":"https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+            "id":"3",
+            "title":"Grains",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"
+      },
+      {
+            "id":"4",
+            "title":"Fats",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"
+      },
+      {
+            "id":"5",
+            "title":"Sweets",
+            "image":"https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3dlZXR8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+            "id":"6",
+            "title":"Sweets",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"
+      }
+]}
