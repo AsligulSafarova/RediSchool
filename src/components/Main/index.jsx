@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../../Styles/main.module.scss";
 import redSoup from "../../assets/red.jpg"
-import Foods from '../Foods';
+import Cart from '../Cart';
 
 export default function Main() {
   return (
@@ -33,7 +33,7 @@ export default function Main() {
       <p>Quick , easy, healthy and more than  <span> +10000 </span> Recipes</p>
     </div>   
    </div>
-  <Foods/>
+  <Cart/>
 
       </div>
     

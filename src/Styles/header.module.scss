@@ -9,11 +9,12 @@
       color: white;
       font-size: 1.7rem;
       & ul {
-            width: 250px;
+            width: 350px;
             margin-right: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+          
       }
       ul li{
             list-style: none;
@@ -21,7 +22,10 @@
       ul  li a {
             text-decoration: none;
             color: white;
-            font-size: 2rem;
+            font-size: 3rem;
+      }
+      ul  li a p{
+            font-size: 4rem;
       }
    
 }

@@ -5,6 +5,10 @@ import Favorite from "../Pages/Favorite";
 import Recipies from "../Pages/Recipies";
 import Login from "../Pages/Login";
 import Main from "./Main";
+import Basket from "../Pages/Basket";
+
+
+
 function App() {
   return (
     <Routes>
@@ -12,6 +16,7 @@ function App() {
       <Route index  element = {<Main/>}/>
       <Route path = "Favorite"  element = {<Favorite/>}/>
       <Route path = "addRecipies"  element = {<Recipies/>}/>
+      <Route path = "basket"  element = {<Basket/>}/>
       <Route path = "login"  element = {<Login/>}/>
       </Route>
     </Routes>
