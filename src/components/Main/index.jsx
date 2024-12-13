@@ -2,8 +2,10 @@ import React from 'react';
 import style from "../../Styles/main.module.scss";
 import redSoup from "../../assets/red.jpg"
 import Cart from '../Cart';
+import { useNavigate } from 'react-router-dom';
 
 export default function Main() {
+  const navigate = useNavigate();
   return (
 
     <div>
@@ -29,7 +31,7 @@ export default function Main() {
      
  
     <div className={style.buttons}>
-      <button>Explore Recipes</button>
+      <button onClick={()=>navigate("/addRecipies")}>Explore Recipes</button>
       <p>Quick , easy, healthy and more than  <span> +10000 </span> Recipes</p>
     </div>   
    </div>
