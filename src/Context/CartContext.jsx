@@ -4,12 +4,20 @@ export const CartContext = createContext({});
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [basket, setBasket] = useState([]);
+  const [detail, setDetail] = useState({});
   const [favorite, setFavorite] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log("fav",favorite);
-  
+
+  const showDetails = (id)=>{
+    const currenctCart = cart.find((item)=>item.id === id);
+
+    if(currenctCart){
+      setDetail(currenctCart)
+    }
+  }
 
   const addToFavorite = (id)=>{
     const item = cart.find((item)=> item.id === id);
@@ -20,7 +28,11 @@ export const CartProvider = ({ children }) => {
 
   }
   
-  console.log("cart",cart);
+ const addTobasket = (id)=>{
+  const currentItem = cart.find((item)=> item.id === id);
+  if(currentItem){
+    setBasket((items)=> [...items,currentItem])
+  }}
   
   const url = "http://localhost:5000/recipes";
 
@@ -53,7 +65,7 @@ export const CartProvider = ({ children }) => {
        loading, 
       setLoading, error, 
       setError, addToFavorite,
-      favorite, setFavorite };
+      favorite, setFavorite,  showDetails,detail, addTobasket, basket };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

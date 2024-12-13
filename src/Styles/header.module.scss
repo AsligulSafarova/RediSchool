@@ -26,6 +26,15 @@
       }
       ul  li a p{
             font-size: 4rem;
+            position: relative;
+            & span{
+                  position: absolute;
+                  font-size: 19px;
+                  top:17px;
+                  left: 15px;
+                  color: red;
+                
+            }
       }
    
 }

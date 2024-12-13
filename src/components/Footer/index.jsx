@@ -10,7 +10,7 @@ export default function Footer() {
      <img src={logo} alt="" style = {{width:"120px"}}/>
          <div style = {{marginLeft:"2rem"}}> 
           <p style = {{fontSize:"1.7rem", marginBottom:"1rem"}}>© Copyright 2025-2026 |  EasyCook </p>
-          <h2>Created by Asligul Safarova && Houzan </h2>
+          <h2>Created by Asligul Safarova && Houzan Kousa</h2>
          </div>
          <div  className={style.terms}>
           <ul >

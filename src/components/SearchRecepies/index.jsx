@@ -10,7 +10,7 @@ export default function SearchRecepies() {
 
   const handleSearch = (e) => {
     if (e.key === "Enter" || e.type === "click") {
-      // Ensure there's a search term before navigating
+    
       if (search.trim()) {
         navigate(`/addRecipies`);
       }
@@ -19,7 +19,6 @@ export default function SearchRecepies() {
 
   return (
     <div className={style.input}>
-   
       <p>
         <IoSearch
           style={{
@@ -37,8 +36,6 @@ export default function SearchRecepies() {
         placeholder="Search Recipes"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        onKeyDown={handleSearch} // Trigger search on Enter
+        onKeyDown={handleSearch}
       />
-    </div>
-  );
-}
+    </div> )}

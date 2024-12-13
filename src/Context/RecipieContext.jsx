@@ -9,9 +9,17 @@ export const RecipieContext = createContext({
 
 export const RecipesProvider = ({ children }) => {
   const [recepie, setRecepie] = useState([]);
+  const [recipiebasket, setRecepieBasket] = useState([]);
   const [search, setSearch] = useState("chicken");
 
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${search}`;
+
+  const addToBasket = (id)=>{
+    const currentItem = recepie.find(item=>item.id === id);
+    if(currentItem){
+      setRecepieBasket((item)=>[...item,currentItem])
+    }
+  }
 
 
   useEffect(() => {
@@ -30,7 +38,7 @@ export const RecipesProvider = ({ children }) => {
   }, [search]);
 
   return (
-    <RecipieContext.Provider value={{ search, setSearch, recepie, setRecepie }}>
+    <RecipieContext.Provider value={{ search, setSearch, recepie, setRecepie,addToBasket ,recipiebasket, setRecepieBasket }}>
       {children}
     </RecipieContext.Provider>
   );
