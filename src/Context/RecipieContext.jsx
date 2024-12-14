@@ -10,6 +10,7 @@ export const RecipieContext = createContext({
 export const RecipesProvider = ({ children }) => {
   const [recepie, setRecepie] = useState([]);
   const [recipiebasket, setRecepieBasket] = useState([]);
+  const [recipieFavorite, setRecepieFavorite] = useState([]);
   const [search, setSearch] = useState("chicken");
 
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${search}`;
@@ -20,7 +21,10 @@ export const RecipesProvider = ({ children }) => {
       setRecepieBasket((item)=>[...item,currentItem])
     }
   }
-
+  const addToFavorite = (id)=>{
+    const currentItem = recepie.find((item)=> item.id === id);
+    setRecepieFavorite((prevItems)=>[...prevItems, currentItem])
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +42,14 @@ export const RecipesProvider = ({ children }) => {
   }, [search]);
 
   return (
-    <RecipieContext.Provider value={{ search, setSearch, recepie, setRecepie,addToBasket ,recipiebasket, setRecepieBasket }}>
+    <RecipieContext.Provider value={{ search, setSearch, recepie, setRecepie,
+      addToBasket ,
+      recipiebasket, 
+      setRecepieBasket,
+      addToFavorite,
+      recipieFavorite ,
+      setRecepieFavorite
+      }}>
       {children}
     </RecipieContext.Provider>
   );

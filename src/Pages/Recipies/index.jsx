@@ -6,11 +6,9 @@ import {useNavigate} from "react-router-dom"
 
 
 export default function Recipies() {
-  const {recepie,addToBasket ,} = useContext(RecipieContext);
+  const {recepie,addToBasket ,   addToFavorite} = useContext(RecipieContext);
   const navigate = useNavigate();
   console.log("rr",recepie);
-  
-
 
   return (
   <div>
@@ -25,7 +23,7 @@ export default function Recipies() {
         <img src={elem.strMealThumb} alt={elem.strMeal}  />
         <div className={style.buttons}>
         <button onClick = {()=>addToBasket(elem.id)}>Buy a Book</button>
-        <button> Add to a Favorite</button>
+        <button onClick={()=>addToFavorite(elem.id)}> Add to a Favorite</button>
        </div>   
       </div>)
      }
