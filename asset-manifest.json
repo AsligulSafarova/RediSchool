@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/AsligulSafarova/RediSchool.git/static/css/main.a7d65b8b.css",
+    "main.js": "/AsligulSafarova/RediSchool.git/static/js/main.6b37785c.js",
+    "static/media/red.jpg": "/AsligulSafarova/RediSchool.git/static/media/red.56128824ce68190eff9f.jpg",
+    "static/media/Easy.svg": "/AsligulSafarova/RediSchool.git/static/media/Easy.b8dd503076e7b78adbf50297036c45cb.svg",
+    "static/media/main.jpg": "/AsligulSafarova/RediSchool.git/static/media/main.9c3c5a7c811777f081af.jpg",
+    "index.html": "/AsligulSafarova/RediSchool.git/index.html",
+    "main.a7d65b8b.css.map": "/AsligulSafarova/RediSchool.git/static/css/main.a7d65b8b.css.map",
+    "main.6b37785c.js.map": "/AsligulSafarova/RediSchool.git/static/js/main.6b37785c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7d65b8b.css",
+    "static/js/main.6b37785c.js"
+  ]
+}
