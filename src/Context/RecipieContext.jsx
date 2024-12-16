@@ -39,6 +39,19 @@ export const RecipesProvider = ({ children }) => {
     }
   };
   
+
+  const incrementCountRecepie = (id)=> {
+    setRecepieBasket(prevBasket=>{
+     return  prevBasket.map((elem)=> elem.idMeal === id || elem.id === id ? {...elem, count:elem.count +1}:elem)
+    })
+  };
+
+  const decrementCountRecepie = (id)=>{
+    setRecepieBasket(prevBasktet =>{
+      return prevBasktet.map((elem)=> elem.id === id || elem.idMeal === id?
+       {...elem, count:elem.count -1}:elem).filter(elem=>elem.count>0)
+    })
+  }
   
   const addToFavorite = (id)=>{
     const currentItem = recepie.find((item)=> item.id === id);
@@ -67,7 +80,9 @@ export const RecipesProvider = ({ children }) => {
       setRecepieBasket,
       addToFavorite,
       recipieFavorite ,
-      setRecepieFavorite
+      setRecepieFavorite,
+      incrementCountRecepie,
+      decrementCountRecepie 
       }}>
       {children}
     </RecipieContext.Provider>

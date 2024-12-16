@@ -7,10 +7,20 @@ import {RecipieContext  } from '../../Context/RecipieContext';
 
 export default function Basket() {
   const {basket,incrementCount,decrementItem } = useContext(CartContext);
-  const {recipiebasket} = useContext(RecipieContext);
+  const {recipiebasket, incrementCountRecepie, decrementCountRecepie } = useContext(RecipieContext);
 
   const combineBasket = [...basket, ...recipiebasket];
   console.log("combine", combineBasket);
+
+  const incrementCountCombine = (id)=>{
+    incrementCount(id);
+    incrementCountRecepie(id)
+  };
+
+  const decrementCountCombine = (id)=>{
+     decrementItem(id);
+     decrementCountRecepie(id)
+ }
   
 
   return (
@@ -25,9 +35,9 @@ export default function Basket() {
             <h4>  You can find more than <span>{book?book:""} </span> in our <span> <FaBookAtlas /></span>Book </h4>
             <p>10$</p>
             <div className={style.count}>
-              <button onClick={()=>incrementCount(elem.id?elem.id:elem.idMeal)}>+</button>
+              <button onClick={()=>incrementCountCombine (elem.id?elem.id:elem.idMeal)}>+</button>
               <h5>count:{count?count:""}</h5>
-              <button onClick={()=>decrementItem(elem.id?elem.id:elem.idMeal)}>-</button>
+              <button onClick={()=>decrementCountCombine(elem.id?elem.id:elem.idMeal)}>-</button>
             </div>
           </div>
         }))
