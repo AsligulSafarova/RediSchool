@@ -12,15 +12,34 @@ export const RecipesProvider = ({ children }) => {
   const [recipiebasket, setRecepieBasket] = useState([]);
   const [recipieFavorite, setRecepieFavorite] = useState([]);
   const [search, setSearch] = useState("chicken");
+  console.log("res",recepie);
+  
 
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${search}`;
 
-  const addToBasket = (id)=>{
-    const currentItem = recepie.find(item=>item.id === id);
-    if(currentItem){
-      setRecepieBasket((item)=>[...item,currentItem])
+  const addToBasket = (id) => {
+    const currentItem = recepie.find(item => item.id === id || item.idMeal === id);
+    
+    if (currentItem) {
+      setRecepieBasket((prevBasket) => {
+        // Check if the item already exists in the basket
+        const existingItem = prevBasket.find(elem => elem.id === id || elem.idMeal === id);
+  
+        if (existingItem) {
+          return prevBasket.map(elem =>
+            elem.id === id || elem.idMeal === id
+              ? { ...elem, count: elem.count + 1 }
+              : elem
+          );
+        }
+  
+        // Add a new item to the basket with a count of 1
+        return [...prevBasket, { ...currentItem, count: 1 }];
+      });
     }
-  }
+  };
+  
+  
   const addToFavorite = (id)=>{
     const currentItem = recepie.find((item)=> item.id === id);
     setRecepieFavorite((prevItems)=>[...prevItems, currentItem])

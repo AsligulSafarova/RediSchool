@@ -34,25 +34,24 @@ export default function Favorite() {
       {
          allFavoriteCards.length > 0 ? (
           allFavoriteCards.map((elem) => {
-            const { image, title, ingredients, id ,book, strMeal, strMealThumb,idMeal} = elem;
             return ( 
-              <div key={id?id:idMeal} className={style.favorite}>
-                     <h1>{title?title:strMeal}</h1>
-                <img src={image?image:strMealThumb} alt="" />
+              <div key={elem.id?elem.id:elem.idMeal} className={style.favorite}>
+                  <h1>{elem.title || elem.strMeal || "No Title Available"}</h1>
+                <img src={elem.image?elem.image:elem.strMealThumb} alt="" />
                 <p onClick={()=> deleteFavorite(elem.id?elem.id:elem.idMeal)}><RiDeleteBin5Line /></p>
                 
     <ol style = {{fontSize:"18px", paddingLeft:"10px"}}>
      
         {
-        ingredients?
-        ingredients.map((ingredient, index) => (
+        elem.ingredients?
+        elem.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         )):""}
-         <h4>  You can find more than <span>{book} </span> in our <span> <FaBookAtlas /></span>Book </h4>
+         <h4>  You can find more than <span>{elem.book} </span> in our <span> <FaBookAtlas /></span>Book </h4>
          <h3>Ingredients:</h3>
       </ol>
       <div className={style.buttons}>
-      <button onClick={()=>addTobasket(id)}>Buy a Book</button>
+      <button onClick={()=>addTobasket(elem.id)}>Buy a Book</button>
     </div>
     </div>
     );})

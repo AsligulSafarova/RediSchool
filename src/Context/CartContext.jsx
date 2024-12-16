@@ -24,16 +24,39 @@ export const CartProvider = ({ children }) => {
     
     if(item){
       setFavorite((prevCart)=>[...prevCart, item])
-    }
+    }}
 
-  }
+    const incrementCount = (id) => {
+      setBasket((prevBasket) =>
+        prevBasket.map((item) =>
+          item.id === id ? { ...item, count: item.count + 1 } : item
+        )
+      );
+    };
+
+    const decrementItem = (id)=>{
+     setBasket(prevBasket=> prevBasket.map(elem=>
+       elem.id === id?
+        {...elem, count: elem.count -1}:elem
+      ).filter(elem=>elem.count>0)
+    
+    )}
   
- const addTobasket = (id)=>{
-  const currentItem = cart.find((item)=> item.id === id);
-  if(currentItem){
-    setBasket((items)=> [...items,currentItem])
-  }}
-  
+  const addTobasket = (id) => {
+    const currentItem = cart.find((item) => item.id === id);
+    if (currentItem) {
+      setBasket((prevBasket) => {
+        const existingItem = prevBasket.find((item) => item.id === id);
+        if (existingItem) {
+          return prevBasket.map((item) =>
+            item.id === id ? { ...item, count: item.count + 1 } : item
+          );
+        }
+        return [...prevBasket, { ...currentItem, count: 1 }];
+      });
+    }
+  };
+
   const url = "http://localhost:5000/recipes";
 
   const fetchData = async () => {
@@ -65,7 +88,8 @@ export const CartProvider = ({ children }) => {
        loading, 
       setLoading, error, 
       setError, addToFavorite,
-      favorite, setFavorite,  showDetails,detail, addTobasket, basket };
+      favorite, setFavorite,  showDetails,detail,
+       addTobasket, basket, incrementCount,decrementItem  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
