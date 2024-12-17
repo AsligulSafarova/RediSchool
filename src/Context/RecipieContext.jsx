@@ -11,7 +11,7 @@ export const RecipesProvider = ({ children }) => {
   const [recepie, setRecepie] = useState([]);
   const [recipiebasket, setRecepieBasket] = useState([]);
   const [recipieFavorite, setRecepieFavorite] = useState([]);
-  const [search, setSearch] = useState("chicken");
+  const [search, setSearch] = useState("");
   console.log("res",recepie);
   
 
