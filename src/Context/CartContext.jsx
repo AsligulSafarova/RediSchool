@@ -49,10 +49,10 @@ export const CartProvider = ({ children }) => {
         const existingItem = prevBasket.find((item) => item.id === id);
         if (existingItem) {
           return prevBasket.map((item) =>
-            item.id === id ? { ...item, count: item.count + 1 } : item
+            item.id === id ? { ...item,price:10, count: item.count + 1 } : item
           );
         }
-        return [...prevBasket, { ...currentItem, count: 1 }];
+        return [...prevBasket, { ...currentItem, price:10, count: 1 }];
       });
     }
   };

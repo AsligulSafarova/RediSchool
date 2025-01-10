@@ -11,6 +11,10 @@ export default function Basket() {
 
   const combineBasket = [...basket, ...recipiebasket];
   console.log("combine", combineBasket);
+  console.log(combineBasket);
+
+  const totalPrice =  combineBasket.reduce((prev,next)=> prev+(next.count*next.price),0)
+  
 
   const incrementCountCombine = (id)=>{
     incrementCount(id);
@@ -28,12 +32,12 @@ export default function Basket() {
       <div>
       {
         combineBasket?.map((elem=>{
-          const {title,image,book,strMeal,strMealThumb, count} = elem;
+          const {title,image,book,strMeal,strMealThumb,price, count} = elem;
          return <div key={elem.id?elem.id: elem.idMeal} className={style.basket}>
             <h1>{title?title:strMeal}</h1>
             <img src={image? image:strMealThumb} alt=""/>
             <h4>  You can find more than <span>{book?book:""} </span> in our <span> <FaBookAtlas /></span>Book </h4>
-            <p>10$</p>
+            <p>{price}$</p>
             <div className={style.count}>
               <button onClick={()=>incrementCountCombine (elem.id?elem.id:elem.idMeal)}>+</button>
               <h5>count:{count?count:""}</h5>
@@ -43,7 +47,7 @@ export default function Basket() {
         }))
       }</div>
       <div className={style.total}>
-        <h1>Total:150$</h1>
+        <h1>Total:{totalPrice}$</h1>
         <h6>You can Pay with:</h6>
         <div className={style.icons}>
         <p><FaCcPaypal /></p>
